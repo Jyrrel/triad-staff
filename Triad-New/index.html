@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Triad Coffee Roasters Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- If your css is in same folder use styles.css
+       If inside css folder use css/styles.css -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="shell">
+    <div class="app" data-app="pos">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar" aria-label="Sidebar Navigation">
+        <div class="brand">
+          <div class="brand-badge brand-logo" aria-hidden="true">
+            <img src="triad-logo.jpg"  alt="Triad Coffee Roasters logo featuring stylized coffee cup design in brown and cream tones">
+          </div>
+          <div>
+            <div class="brand-name">Triad Coffee Roasters</div>
+            <div class="brand-sub">Staff Panel</div>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Main menu">
+          <a class="nav-item" href="#" data-nav="dashboard">
+            <span class="nav-icon" aria-hidden="true">🏠</span> Dashboard
+          </a>
+          <a class="nav-item active" href="#" data-nav="menu">
+            <span class="nav-icon" aria-hidden="true">📋</span> Menu
+          </a>
+          <a class="nav-item" href="#" data-nav="orders">
+            <span class="nav-icon" aria-hidden="true">🧾</span> Orders
+          </a>
+          <a class="nav-item" href="#" data-nav="customers">
+            <span class="nav-icon" aria-hidden="true">👥</span> Customers
+          </a>
+          <a class="nav-item" href="#" data-nav="analytics">
+            <span class="nav-icon" aria-hidden="true">📈</span> Analytics
+          </a>
+          <a class="nav-item" href="#" data-nav="chat">
+            <span class="nav-icon" aria-hidden="true">💬</span> Chat
+          </a>
+          <a class="nav-item" href="#" data-nav="settings">
+            <span class="nav-icon" aria-hidden="true">⚙️</span> Setting
+          </a>
+        </nav>
+
+        <div class="promo">
+          <div class="promo-illust" aria-hidden="true">☕✨</div>
+          <button class="btn btn-dark" type="button" data-action="go-premium">
+            Go to Premium
+          </button>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main" aria-label="Main Content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+          <h1 class="page-title">Dashboard</h1>
+
+          <form class="search" role="search" data-search="menu">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input type="search" placeholder="Search coffee, drinks, pastries..." name="q" autocomplete="off" data-search-input />
+          </form>
+
+          <div class="topbar-right">
+            <button class="icon-btn" type="button" aria-label="Notifications" data-action="notifications">
+              🔔
+            </button>
+
+            <button class="user" type="button" data-action="user-menu" aria-label="User menu">
+              <span class="avatar" aria-hidden="true">TC</span>
+              <span class="user-meta">
+                <span class="user-name">Triad Staff</span>
+                <span class="user-role">Staff</span>
+              </span>
+              <span class="chev" aria-hidden="true">▾</span>
+            </button>
+          </div>
+        </header>
+
+        <div class="content">
+          <!-- LEFT -->
+          <section class="left">
+
+            <!-- HERO / BANNER -->
+            <section class="hero" aria-label="Promotion banner">
+              <div class="hero-overlay">
+                <h2 class="hero-title">Great Coffee is the key to<br />your good mood</h2>
+                <p class="hero-text">
+                  Fresh roasted beans & handcrafted drinks.<br />
+                  Enjoy discounts on featured beverages.
+                </p>
+                <button class="btn btn-primary" type="button" data-action="order-now">
+                  Order Now
+                </button>
+              </div>
+            </section>
+
+            <!-- CATEGORIES -->
+            <header class="section-head">
+              <h3>Choose Category</h3>
+              <button class="link-btn" type="button" data-action="see-all-categories">
+                See All →
+              </button>
+            </header>
+
+            <div class="categories" role="tablist" aria-label="Coffee categories">
+              <button class="cat active" type="button" role="tab" aria-selected="true" data-category="hot-coffee">
+                <span aria-hidden="true">☕</span><small>Hot Coffee</small>
+              </button>
+              <button class="cat" type="button" role="tab" aria-selected="false" data-category="iced-coffee">
+                <span aria-hidden="true">🧊</span><small>Iced Coffee</small>
+              </button>
+              <button class="cat" type="button" role="tab" aria-selected="false" data-category="espresso">
+                <span aria-hidden="true">⚡</span><small>Espresso</small>
+              </button>
+              <button class="cat" type="button" role="tab" aria-selected="false" data-category="frappe">
+                <span aria-hidden="true">🥤</span><small>Frappe</small>
+              </button>
+              <button class="cat" type="button" role="tab" aria-selected="false" data-category="tea">
+                <span aria-hidden="true">🍵</span><small>Tea</small>
+              </button>
+              <button class="cat" type="button" role="tab" aria-selected="false" data-category="pastries">
+                <span aria-hidden="true">🥐</span><small>Pastries</small>
+              </button>
+              <button class="cat" type="button" role="tab" aria-selected="false" data-category="beans">
+                <span aria-hidden="true">🫘</span><small>Beans</small>
+              </button>
+            </div>
+
+            <!-- MENU -->
+            <header class="section-head">
+              <h3>Special Menu <span class="muted">All Items</span></h3>
+            </header>
+
+            <section class="grid" aria-label="Menu items" data-menu-grid>
+              <article class="card" data-item data-id="1" data-name="Caramel Latte" data-price="3.95">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1000&q=60" alt="Caramel Latte">
+                <div class="card-body">
+                  <h4>Caramel Latte</h4>
+                  <p>Espresso with steamed milk & caramel...</p>
+                  <div class="card-foot">
+                    <strong class="price" data-price-text>$3.95</strong>
+                    <button class="pill" type="button" data-action="add-to-cart">Add</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card" data-item data-id="2" data-name="Iced Americano" data-price="3.10">
+                <img src="https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=1000&q=60" alt="Iced Americano">
+                <div class="card-body">
+                  <h4>Iced Americano</h4>
+                  <p>Bold espresso over ice, refreshing...</p>
+                  <div class="card-foot">
+                    <strong class="price" data-price-text>$3.10</strong>
+                    <button class="pill" type="button" data-action="add-to-cart">Add</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card" data-item data-id="3" data-name="Cappuccino" data-price="3.50">
+                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1000&q=60" alt="Cappuccino">
+                <div class="card-body">
+                  <h4>Cappuccino</h4>
+                  <p>Classic espresso with creamy foam...</p>
+                  <div class="card-foot">
+                    <strong class="price" data-price-text>$3.50</strong>
+                    <button class="pill" type="button" data-action="add-to-cart">Add</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card" data-item data-id="4" data-name="Mocha Frappe" data-price="4.25">
+                <img src="https://images.unsplash.com/photo-1577968897966-3d4325b36b61?auto=format&fit=crop&w=1000&q=60" alt="Mocha Frappe">
+                <div class="card-body">
+                  <h4>Mocha Frappe</h4>
+                  <p>Blended coffee with chocolate & ice...</p>
+                  <div class="card-foot">
+                    <strong class="price" data-price-text>$4.25</strong>
+                    <button class="pill" type="button" data-action="add-to-cart">Add</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card" data-item data-id="5" data-name="Matcha Latte" data-price="3.85">
+                <img src="https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?auto=format&fit=crop&w=1000&q=60" alt="Matcha Latte">
+                <div class="card-body">
+                  <h4>Matcha Latte</h4>
+                  <p>Smooth matcha with milk, lightly sweet...</p>
+                  <div class="card-foot">
+                    <strong class="price" data-price-text>$3.85</strong>
+                    <button class="pill" type="button" data-action="add-to-cart">Add</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card" data-item data-id="6" data-name="Butter Croissant" data-price="2.40">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1000&q=60" alt="Croissant">
+                <div class="card-body">
+                  <h4>Butter Croissant</h4>
+                  <p>Flaky buttery pastry, perfect with coffee...</p>
+                  <div class="card-foot">
+                    <strong class="price" data-price-text>$2.40</strong>
+                    <button class="pill" type="button" data-action="add-to-cart">Add</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card" data-item data-id="7" data-name="House Blend Beans (250g)" data-price="8.99">
+                <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&w=1000&q=60" alt="Coffee Beans">
+                <div class="card-body">
+                  <h4>House Blend Beans (250g)</h4>
+                  <p>Fresh roasted beans, balanced & smooth...</p>
+                  <div class="card-foot">
+                    <strong class="price" data-price-text>$8.99</strong>
+                    <button class="pill" type="button" data-action="add-to-cart">Add</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card" data-item data-id="8" data-name="Cold Brew" data-price="3.75">
+                <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=1000&q=60" alt="Cold Brew">
+                <div class="card-body">
+                  <h4>Cold Brew</h4>
+                  <p>Slow steeped coffee, smooth and strong...</p>
+                  <div class="card-foot">
+                    <strong class="price" data-price-text>$3.75</strong>
+                    <button class="pill" type="button" data-action="add-to-cart">Add</button>
+                  </div>
+                </div>
+              </article>
+            </section>
+          </section>
+        </div>
+      </main>
+
+      <!-- RIGHT PANEL -->
+      <aside class="right" aria-label="Order Panel">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>Customer Information</h3>
+            <button class="icon-btn" type="button" aria-label="Info" data-action="customer-info">ⓘ</button>
+          </div>
+
+          <div class="field">
+            <label for="custName">Customer Name:</label>
+            <input id="custName" class="input" type="text" value="Judith Rodriguez" data-customer-name />
+          </div>
+
+          <div class="field two-col">
+            <div>
+              <label for="tableCount">Number of Person:</label>
+              <input id="tableCount" class="input" type="text" value="24 Person Table" data-table-text />
+            </div>
+
+            <div class="qty" aria-label="Quantity controls">
+              <button class="qty-btn" type="button" data-action="decrease-person">−</button>
+              <span class="qty-num" data-person-count>24</span>
+              <button class="qty-btn" type="button" data-action="increase-person">+</button>
+            </div>
+          </div>
+
+          <h3 class="mt">Current Order</h3>
+
+          <div class="order-list" data-cart>
+            <div class="order-item" data-cart-item data-id="latte">
+              <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=240&q=60" alt="Caramel Latte">
+              <div class="order-info">
+                <div class="order-name">Caramel Latte</div>
+                <div class="order-price">$3.95</div>
+              </div>
+              <div class="order-actions">
+                <button class="round" type="button" data-action="decrease-item" aria-label="Decrease">−</button>
+                <span class="badge" data-qty>1</span>
+                <button class="round" type="button" data-action="increase-item" aria-label="Increase">+</button>
+                <button class="mini-link" type="button" data-action="remove-item">Remove</button>
+              </div>
+            </div>
+
+            <div class="order-item" data-cart-item data-id="coldbrew">
+              <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=240&q=60" alt="Cold Brew">
+              <div class="order-info">
+                <div class="order-name">Cold Brew</div>
+                <div class="order-price">$3.75</div>
+              </div>
+              <div class="order-actions">
+                <button class="round" type="button" data-action="decrease-item" aria-label="Decrease">−</button>
+                <span class="badge" data-qty>1</span>
+                <button class="round" type="button" data-action="increase-item" aria-label="Increase">+</button>
+                <button class="mini-link" type="button" data-action="remove-item">Remove</button>
+              </div>
+            </div>
+
+            <div class="order-item" data-cart-item data-id="croissant">
+              <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=240&q=60" alt="Butter Croissant">
+              <div class="order-info">
+                <div class="order-name">Butter Croissant</div>
+                <div class="order-price">$2.40</div>
+              </div>
+              <div class="order-actions">
+                <button class="round" type="button" data-action="decrease-item" aria-label="Decrease">−</button>
+                <span class="badge" data-qty>1</span>
+                <button class="round" type="button" data-action="increase-item" aria-label="Increase">+</button>
+                <button class="mini-link" type="button" data-action="remove-item">Remove</button>
+              </div>
+            </div>
+
+            <div class="order-item" data-cart-item data-id="beans">
+              <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&w=240&q=60" alt="House Blend Beans">
+              <div class="order-info">
+                <div class="order-name">House Blend Beans</div>
+                <div class="order-price">$8.99</div>
+              </div>
+              <div class="order-actions">
+                <button class="round" type="button" data-action="decrease-item" aria-label="Decrease">−</button>
+                <span class="badge" data-qty>1</span>
+                <button class="round" type="button" data-action="increase-item" aria-label="Increase">+</button>
+                <button class="mini-link" type="button" data-action="remove-item">Remove</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="totals" aria-label="Totals">
+            <div class="line"><span>Sub Total</span><strong data-subtotal>$19.09</strong></div>
+            <div class="line"><span>Tax 10% (VAT Included)</span><strong data-tax>$1.91</strong></div>
+            <div class="line"><span>Discount 10%</span><strong class="neg" data-discount>-$1.91</strong></div>
+            <div class="line total"><span>Total</span><strong class="green" data-total>$19.09</strong></div>
+          </div>
+
+          <h3 class="mt">Payment Method</h3>
+          <div class="pay" role="radiogroup" aria-label="Payment method">
+            <button class="pay-btn" type="button" role="radio" aria-checked="false" data-payment="cash">Cash</button>
+            <button class="pay-btn" type="button" role="radio" aria-checked="false" data-payment="card">Debit Card</button>
+            <button class="pay-btn active" type="button" role="radio" aria-checked="true" data-payment="ewallet">E-Wallet</button>
+          </div>
+
+          <button class="btn btn-primary full" type="button" data-action="continue-payment">
+            Continue to Payment
+          </button>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</body>
+</html>
